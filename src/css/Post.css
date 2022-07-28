@@ -7,15 +7,11 @@
 .card .card-title{
   font-family: 'Acme', sans-serif;
 }
-.card .author{
-  color: red;
-}
+
 .card .end{
   height: 100%;
 }
-.card .desc{
-  height: 100px;
-}
+
 .card img{
   border-radius: 3% 0 0 3%;
 }

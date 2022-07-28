@@ -1,21 +1,20 @@
 import React from 'react';
-import '../css/BookList.css';
-import Book from './Book';
-import  { BookContext } from '../contexts/BookContext';
+import '../css/PostList.css';
+import Post from './Post';
+import  { PostContext } from '../contexts/PostContext';
 import  { ThemeContext } from '../contexts/ThemeContext';
 import Search from './Search';
 
-class BookList extends React.Component {
-
+class PostList extends React.Component {
 
     render() {
         return (
 
             <ThemeContext.Consumer>{(contextTheme) => (
-                <BookContext.Consumer>
-                    {contextBook => {
+                <PostContext.Consumer>
+                    {contextPost => {
                     
-                    const { filterBook } = contextBook;
+                    const { filterPost } = contextPost;
                     const {changeTheme, isDarkTheme, dark, light } = contextTheme;
                     const theme = isDarkTheme ? dark : light;
                 
@@ -24,16 +23,16 @@ class BookList extends React.Component {
                             <Search/>
                         <div className="container">
                             <div className="text-center">
-                                <h2 className="section-heading text-uppercase">BooksPage</h2>
+                                <h2 className="section-heading text-uppercase">PostsPage</h2>
                                 <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                                 <button type="button" className="btn btn-sm btn-info" style={{marginTop: '-70px'}}
                                 onClick={changeTheme}>Change Theme</button>
                             </div>
                             <div className="row d-flex justify-content-center">
         
-                                {filterBook.map((book, i) => {
-                                    return <Book book={book}
-                                        key={i}
+                                {filterPost.map((post) => {
+                                    return <Post post={post}
+                                        key={post.id}
                                     />
                                 })}
         
@@ -42,7 +41,7 @@ class BookList extends React.Component {
                     </section>
                     )
                 }}
-            </BookContext.Consumer>
+            </PostContext.Consumer>
             )}
 
 
@@ -56,4 +55,4 @@ class BookList extends React.Component {
 
 }
 
-export default BookList;
+export default PostList;

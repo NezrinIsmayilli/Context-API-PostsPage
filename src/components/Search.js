@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import  { BookContext } from '../contexts/BookContext';
+import  { PostContext } from '../contexts/PostContext';
 
 class Search extends Component {
   render() {
     return (
-        <BookContext.Consumer>
+        <PostContext.Consumer>
             {value=>
             <div className="container">
               <form onSubmit={(e)=>{e.preventDefault()}}>
@@ -13,14 +13,14 @@ class Search extends Component {
                         <input 
                              type="text" 
                              className="form-control" 
-                             placeholder="Seach a book"
-                             onChange={value.searchBook}/>
+                             placeholder="Seach a post for title"
+                             onChange={value.searchPost}/>
                     </div>
                 </div>
              </form>
             </div>
             }
-        </BookContext.Consumer>
+        </PostContext.Consumer>
     )
   }
 }

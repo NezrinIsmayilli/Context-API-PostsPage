@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import BookList from './BookList';
-import BookContextProvider from '../contexts/BookContext';
+import PostList from './PostList';
+import PostContextProvider from '../contexts/PostContext';
 import ThemeContextProvider from '../contexts/ThemeContext';
 
 class App extends React.Component {
@@ -10,14 +10,14 @@ class App extends React.Component {
 
         return (
                 <ThemeContextProvider>
-                    <BookContextProvider>
+                    <PostContextProvider>
                         <BrowserRouter>
                             <Routes>
-                                <Route path="/" element={<BookList />}/>
+                                <Route path="/" element={<PostList />}/>
                             </Routes>
                         </BrowserRouter>
                         
-                    </BookContextProvider>
+                    </PostContextProvider>
                 </ThemeContextProvider>
         );
 
